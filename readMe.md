@@ -27,3 +27,18 @@ JSON
 
 Embeddings using Spring AI
 
+Embeddings are stored in Vector Data Bases
+
+# Laws of Cosines
+
+Cosine Similarity : measures how close two vectors are by comparing the cosine of the angle between them.
+It is useful for checking how semantically similar two words or texts are:
+Formula for Cosine similarity  = A.B/(||A||. ||B||)
+Range 
+ 1 -> Identical direction (high similarity)
+ 0 -> Orthogonal (no similarity)
+ -1 -> Opposite Direction 
+
+# Applicaiton of Embeddings 
+1- Semantic Searching
+
