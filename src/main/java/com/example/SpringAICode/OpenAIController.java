@@ -10,6 +10,7 @@ import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
@@ -30,6 +31,9 @@ public class OpenAIController {
     @Autowired
     @Qualifier("openAiEmbeddingModel")
     private EmbeddingModel embeddingModel;
+
+    @Autowired
+    private VectorStore vectorStore;
 
 //        ChatMemory chatMemory = MessageWindowChatMemory.builder().build();
 
@@ -94,6 +98,12 @@ public class OpenAIController {
         //return dotProduct /(Math.sqrt(norm1) * Math.sqrt(norm2));
         //In Percentage
         return (dotProduct  /(Math.sqrt(norm1) * Math.sqrt(norm2)))*100;
+    }
+
+    //Get semantic search on Products from text file
+    @PostMapping("/api/products")
+    public List<Document> getProducts(@RequestParam String text){
+        return vectorStore.similaritySearch(text);
     }
 
 }
