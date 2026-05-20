@@ -39,6 +39,32 @@ Range
  0 -> Orthogonal (no similarity)
  -1 -> Opposite Direction 
 
-# Applicaiton of Embeddings 
+# Application of Embeddings 
 1- Semantic Searching
 
+# Vector Databases
+Vector Db's let us search based on meaning, not just keywords. SpringAI makes it simple with VectorStore
+# Simple Vector Store 
+This SimpleVectorStore helps you load the documents, split them into embeddings and store them for semantic search.
+Let us now start with this for practice, then move to real vector DB's like PgVector for production.
+ # Steps to Implement 
+    1- Load the data file
+    2- Break into Chunks
+    3- Create DataInitializer Class
+    4- VectorStore Setup
+
+
+# PG Vector Store 
+Open source Postgre SQL extension for handling vector technologies.
+ALlows storing embeddings in Postgres and performing similarity searches.
+
+# Spring AI + PG Vectore
+In Spring AI, PGVector works as a Vector Store implementation
+You will need 
+    1- Dependencies
+    2- DB Configuration-> URL,username,password
+    3- Vector Store properties 
+        1- index type
+        2- distance type (cosine, L2, etc)
+        3- dimensions
+        4- max document batch size 
